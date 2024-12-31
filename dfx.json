@@ -1,0 +1,27 @@
+{
+  "canisters": {
+    "reversi_backend": {
+      "candid": "src/reversi_backend/reversi_backend.did",
+      "package": "reversi_backend",
+      "type": "rust"
+    },
+    "reversi_frontend": {
+      "dependencies": [
+        "reversi_backend"
+      ],
+      "source": [
+        "src/reversi_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "reversi_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

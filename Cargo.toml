@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "src/reversi_backend"
+]
+resolver = "2"
