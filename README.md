@@ -2,6 +2,10 @@
 
 This is a reversi game created using ReactJS as frontend and Rust as backend in ICP.
 
+You may check out the game at:
+
+https://4owr6-zyaaa-aaaah-qpx7a-cai.icp0.io/
+
 To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
 
 To learn more before you start working with `reversi`, see the following documentation available online:
