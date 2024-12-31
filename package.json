@@ -14,5 +14,9 @@
   "type": "module",
   "workspaces": [
     "src/reversi_frontend"
-  ]
+  ],
+  "devDependencies": {
+    "sass": "^1.83.0",
+    "terser": "^5.37.0"
+  }
 }

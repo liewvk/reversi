@@ -13,7 +13,7 @@
         "src/reversi_frontend/dist"
       ],
       "type": "assets",
-      "workspace": "reversi_frontend"
+      "build": "npm run build"
     }
   },
   "defaults": {

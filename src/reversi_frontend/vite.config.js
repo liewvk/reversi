@@ -1,44 +1,25 @@
-import { fileURLToPath, URL } from 'url';
-import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
-import environment from 'vite-plugin-environment';
-import dotenv from 'dotenv';
-
-dotenv.config({ path: '../../.env' });
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  build: {
-    emptyOutDir: true,
+  plugins: [react()],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `` // No additional imports or variables
+      }
+    }
   },
   optimizeDeps: {
-    esbuildOptions: {
-      define: {
-        global: "globalThis",
-      },
-    },
+    exclude: ['lucide-react']
   },
   server: {
-    proxy: {
-      "/api": {
-        target: "http://127.0.0.1:4943",
-        changeOrigin: true,
-      },
-    },
+    port: 3000, // Change the port if needed
+    open: true // Automatically open the app in the browser
   },
-  plugins: [
-    react(),
-    environment("all", { prefix: "CANISTER_" }),
-    environment("all", { prefix: "DFX_" }),
-  ],
-  resolve: {
-    alias: [
-      {
-        find: "declarations",
-        replacement: fileURLToPath(
-          new URL("../declarations", import.meta.url)
-        ),
-      },
-    ],
-    dedupe: ['@dfinity/agent'],
-  },
+  build: {
+    outDir: 'dist', // Output directory for build files
+    sourcemap: true, // Enable source maps for debugging
+    minify: 'terser' // Minification strategy
+  }
 });
